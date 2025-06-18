@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name: micro2
-          image: diegoborja09/micro2:1.0.1
+          image: diegoborja09/micro2:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
