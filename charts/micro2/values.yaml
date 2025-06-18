@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: diegoborja09/micro2
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+
+containerPort: 3000

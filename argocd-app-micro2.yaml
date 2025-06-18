@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: micro2
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/DiegoBorja09/micro2
+    targetRevision: main
+    chart: charts/micro2
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
