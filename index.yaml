@@ -3,11 +3,11 @@ entries:
   micro2:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-19T03:51:45.113313332Z"
+    created: "2025-06-19T04:10:04.718283121Z"
     description: Microservicio 2 chart
-    digest: b5ff99de162b2c3f4fcec877f47a233aa69b998e60df5e2c3208e8a44e3fbcbb
+    digest: aa8aeeefcfbe660edff284ee17fb6cbb3748d6658880035ddaf778f4fc08fd32
     name: micro2
     urls:
-    - https://diegoborja09.github.io/micro2/micro2-0.1.6.tgz
-    version: 0.1.6
-generated: "2025-06-19T03:51:45.112860968Z"
+    - https://diegoborja09.github.io/micro2/micro2-0.1.7.tgz
+    version: 0.1.7
+generated: "2025-06-19T04:10:04.717974844Z"
