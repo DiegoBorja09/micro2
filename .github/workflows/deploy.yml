@@ -1,12 +1,16 @@
-name: Deploy to DigitalOcean Kubernetes
+name: Build and Push Micro2 Image
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'Dockerfile'
+      - '.github/workflows/**'
 
 jobs:
-  build-and-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,13 +30,3 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/micro2:latest .
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/micro2:latest
-
-    - name: Set up Kubeconfig
-      run: |
-        mkdir -p ~/.kube
-        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > ~/.kube/config
-
-    - name: Apply Kubernetes manifests
-      run: |
-        kubectl apply -f app-deployment2.yaml
-        kubectl apply -f services2.yaml
