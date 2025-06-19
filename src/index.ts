@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT ?? 8080;
 
 app.get('/api/mock', (req, res) => {
-  res.json({ message: 'service 2 running cambio', timestamp: new Date() });
+  res.json({ message: 'service 2 running cambio 2', timestamp: new Date() });
 });
 
 app.listen(PORT, () => {
