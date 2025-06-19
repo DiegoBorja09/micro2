@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'Dockerfile'
       - '.github/workflows/**'
+      - 'charts/**'
 
 jobs:
   build-and-push:
