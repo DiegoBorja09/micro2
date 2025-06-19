@@ -16,9 +16,15 @@ jobs:
       uses: azure/setup-helm@v3
       with:
         version: 'v3.12.0'
+
     - name: Update Helm chart image tag
       run: |
         sed -i "s|tag:.*|tag: \"${{ github.sha }}\"|" charts/micro2/values.yaml
+
+    - name: Bump chart version
+      run: |
+        VERSION="0.1.${{ github.run_number }}"
+        sed -i "s/^version:.*/version: ${VERSION}/" charts/micro2/Chart.yaml
 
     - name: Package chart
       run: |
@@ -37,4 +43,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./repo
         publish_branch: gh-pages
-        
