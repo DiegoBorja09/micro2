@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: diegoborja09/micro2
-  tag: latest
+  tag: ""
   pullPolicy: Always
 
 service:
